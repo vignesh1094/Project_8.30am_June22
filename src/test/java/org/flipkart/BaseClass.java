@@ -6,7 +6,9 @@ import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,6 +41,7 @@ public class BaseClass {
 	//url
 	public static void urlLaunch(String url) {
 		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	//click
 	public static void click(WebElement e) {
@@ -64,7 +67,7 @@ public class BaseClass {
 	}
 	
 	//enter
-	public static void robotE() throws AWTException{
+	public static void pressEnter() throws AWTException{
 		Robot r=new Robot();
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
@@ -75,5 +78,29 @@ public class BaseClass {
 	    JavascriptExecutor js=(JavascriptExecutor)driver;
 	    js.executeScript("arguments[0].scrollIntoView(true)", webElement);
 	}
+	public static void iphone() {
+		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
+		System.out.println(iphones.size());
+		
+		for(WebElement x:iphones) {
+			String name = x.getText();
+			System.out.println(name);
+		}
+		
+
+	}
+	public static void price() {
+		List<WebElement> prices = driver.findElements(By.xpath("//div[@class='_30jeq3 _1_WHN1']"));
+		System.out.println(prices.size());
+		
+		for(WebElement x:prices) {
+			String name = x.getText();
+			System.out.println(name);
+		}
+		
+
+	}
+	
+	
 
 }

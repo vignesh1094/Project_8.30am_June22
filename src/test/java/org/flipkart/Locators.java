@@ -1,6 +1,7 @@
 package org.flipkart;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,47 +24,15 @@ public class Locators extends BaseClass {
 		return search;
 	}
 	
-	@FindBy(xpath="//div[text()='OnePlus Y1 80 cm (32 inch) HD Ready LED Smart Android TV']")
-	private WebElement tv;
+	@FindBy(xpath="//div[text()='APPLE iPhone 13 (Pink, 128 GB)']")
+	private WebElement iphone;
 
-	public WebElement getTv() {
-		return tv;
-	}
-	
-	@FindBy(xpath="//button[text()='ADD TO CART']")
-	private WebElement cart;
-
-	public WebElement getCart() {
-		return cart;
+	public WebElement getIphone() {
+		return iphone;
 	}
 	
 	
-	@FindBy(id="pincodeInputId")
-	private WebElement pincode;
-
-	public WebElement getPincode() {
-		return pincode;
-	}
 	
-	@FindBy(xpath="//span[text()='Check']")
-	private WebElement pinCheck;
-
-	public WebElement getPinCheck() {
-		return pinCheck;
-	}
-	
-	@FindBy(xpath="//span[text()='Visit the']//following::a[text()='Help Center']")
-	private WebElement helpCenter;
-
-	public WebElement getHelpCenter() {
-		return helpCenter;
-	}
-	
-	@FindBy(xpath="//span[text()='View More']")
-	private WebElement more;
-
-	public WebElement getMore() {
-		return more;
-	}
-
 }
+
+	
