@@ -3,8 +3,10 @@ package org.flipkart;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -78,7 +80,9 @@ public class BaseClass {
 	    JavascriptExecutor js=(JavascriptExecutor)driver;
 	    js.executeScript("arguments[0].scrollIntoView(true)", webElement);
 	}
+	
 	public static void iphone() {
+		
 		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
 		System.out.println(iphones.size());
 		
@@ -87,9 +91,6 @@ public class BaseClass {
 			System.out.println(name);
 		}
 		
-
-	}
-	public static void price() {
 		List<WebElement> prices = driver.findElements(By.xpath("//div[@class='_30jeq3 _1_WHN1']"));
 		System.out.println(prices.size());
 		
@@ -98,8 +99,32 @@ public class BaseClass {
 			System.out.println(name);
 		}
 		
+		
+		
+		
 
 	}
+	public static void price() {
+		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
+		System.out.println(iphones.size());
+		WebElement webElement = iphones.get(3);
+		System.out.println(webElement);
+		
+		List<WebElement> prices = driver.findElements(By.xpath("//div[@class='_30jeq3 _1_WHN1']"));
+		System.out.println(prices.size());
+
+		for(int i=0;i<iphones.size();i++) {
+			System.out.println(iphones.get(i)+"==="+prices.get(i));
+			
+		}
+		Map<String, String> mp=new LinkedHashMap<String, String>();
+		for (int i = 0; i < iphones.size(); i++) {
+			mp.put(iphones.get(i), prices.get(i));
+		}
+	
+
+	}
+	
 	
 	
 
