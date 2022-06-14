@@ -3,8 +3,12 @@ package org.flipkart;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+<<<<<<< HEAD
+import java.util.LinkedHashMap;
+=======
 import java.util.ArrayList;
 import java.util.Collections;
+>>>>>>> 13ed37e3440b3f1366f3f7fe15497d249d8922aa
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -90,8 +94,10 @@ public class BaseClass {
 	    js.executeScript("arguments[0].scrollIntoView(true)", webElement);
 	}
 	
+//iphone name as webelement
 	static String ip;
 	public static String iphones() {
+
 		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
 		System.out.println(iphones.size());
 		
@@ -106,12 +112,11 @@ public class BaseClass {
 
 	}
 	
-	static Integer li;
-	public static Integer price() {
+//prices converted into integer	li
+
+	public static void price() {
 		
 		List<WebElement> prices = driver.findElements(By.xpath("//div[@class='_30jeq3 _1_WHN1']"));
-		System.out.println(prices.size());
-		
 		for(WebElement p:prices) {
 			String name=p.getText();
 			
@@ -122,18 +127,15 @@ public class BaseClass {
 			int ps=Integer.parseInt(name);
 			List<Integer> li=new ArrayList<Integer>();
 			li.add(ps);
-			
-			System.out.println(li);
-			
+			Collections.sort(li);
+			System.out.println(li);	
 		}
-		return li;
 	}
 	
-
+   //iphones converted into string ip
 	public static void map() {
 		//iphone string
 		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
-		System.out.println(iphones.size());
 		//iphone loop
 		List<String> ip = new ArrayList<String>();
 		for(WebElement x:iphones) {
@@ -142,9 +144,12 @@ public class BaseClass {
 			}
 		System.out.println(ip);
 		
+	}
+	
+   //new method using map  	
+	public static void price1() {
 		//price integer
 		List<WebElement> prices = driver.findElements(By.xpath("//div[@class='_30jeq3 _1_WHN1']"));
-		System.out.println(prices.size());
 		//price loop
 		List<Integer> li=new ArrayList<Integer>();
 		for(WebElement p:prices) {
@@ -156,10 +161,19 @@ public class BaseClass {
 				int ps=Integer.parseInt(name);
 				li.add(ps);
 			}	
+			
 		}
-		System.out.println(li);
 		
-		Map<String,Integer> mp=new TreeMap<String,Integer>();
+     //iphone string
+		List<WebElement> iphones = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
+    //iphone loop
+		List<String> ip = new ArrayList<String>();
+		for(WebElement x:iphones) {
+			String name = x.getText();
+		    ip.add(name);
+		}
+		
+		Map<String,Integer> mp=new LinkedHashMap<String,Integer>();
 		for(int i=0;i<li.size();i++) {
 			mp.put(ip.get(i), li.get(i));
 		}
@@ -168,10 +182,14 @@ public class BaseClass {
 		for(java.util.Map.Entry<String,Integer> x:es) {	
 			System.out.println(x);
 		}
+		
+		
+	
 	}
 
 	}
 	
+
 
 
 	
