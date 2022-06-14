@@ -16,9 +16,10 @@ public class JunitCall extends BaseClass {
 		sendKeys(f.getSearch(), "iphone");
 		pressEnter();
 		wait(3000);
-		iphones();
-		price();
-		map();
+//		iphones();
+//		price();
+//		map();
+		price1();
 //		quit();
 		
 		}
