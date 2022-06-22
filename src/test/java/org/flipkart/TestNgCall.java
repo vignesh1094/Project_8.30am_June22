@@ -1,27 +1,28 @@
 package org.flipkart;
 
+
 import java.awt.AWTException;
 import java.util.Collections;
 
 import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
 
 
-public class JunitCall extends BaseClass {
+public class TestNgCall extends BaseClass {
 	
-	public static void main(String[] args) throws AWTException, InterruptedException {
+
+	
+	@Test
+	private void laptopsearch() throws AWTException, InterruptedException {
+		
 		browserLaunch("chrome");
 		urlLaunch("https://www.flipkart.com/");
 		Locators f=new Locators();
 		click(f.getClose());
-		sendKeys(f.getSearch(), "iphone");
+		sendKeys(f.getSearch(), "laptop");
 		pressEnter();
 		wait(3000);
-//		iphones();
-//		price();
-//		map();
-		price1();
-//		quit();
-		
+
 		}
 
 }
